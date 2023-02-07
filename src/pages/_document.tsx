@@ -7,10 +7,6 @@ class MyDocument extends Document {
     return (
       <Html lang={CONFIG.lang}>
         <Head>
-          <style>
-            @import
-            url('/styles/global.css')
-          </style>
           <link
             rel="preload"
             as="font"
