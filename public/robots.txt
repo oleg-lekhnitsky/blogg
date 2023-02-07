@@ -6,4 +6,4 @@ Allow: /
 Host: https://blogg-omega.vercel.app
 
 # Sitemaps
-Sitemap: https://morethan-log.vercel.app/sitemap.xml
+Sitemap: https://blogg-omega.vercel.app/sitemap.xml
