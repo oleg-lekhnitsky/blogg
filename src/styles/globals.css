@@ -4,6 +4,7 @@
 
 html {
   font-family: 'Replica', sans-serif;
+  font-display: swap;
   --scrollbarBG: #ffffff00;
   --thumbBG: #b8b8b8;
   --gray-light: #E5E5E5;
