@@ -23,9 +23,9 @@ type Props = {
 const PostDetail: React.FC<Props> = ({ blockMap, data }) => {
   return (
     <div
-      className={`w-full px-0 md:w-2/3 darkrounded-3xl py-12 px-6`}
+      className={`w-full px-0 md:px-4 md:w-2/3 darkrounded-3xl py-12 px-6`}
     >
-      <article className="w-full">
+      <article className="max-w-full">
         {data.type[0] === "Post" && <PostHeader data={data} />}
         {blockMap && (
           <div className="mt-4">
