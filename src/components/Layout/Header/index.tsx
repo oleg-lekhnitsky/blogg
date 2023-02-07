@@ -20,7 +20,7 @@ const Header: React.FC<Props> = ({ fullWidth }) => {
       ref={navRef}
     >
       <Logo />
-      <div className={`flex gap-3 items-center`}>
+      <div className={`pr-0 font-bold text-xl flex gap-4 items-center md:pr-4`}>
         <ThemeToggle />
         <NavBar />
       </div>

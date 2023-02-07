@@ -1,28 +1,41 @@
 /* NOTION CSS OVERRIDE */
-
+body{
+  width: 100%;
+}
 .notion {
-  font-family: Pretendard, Roboto, sans-serif;
-  @apply text-gray-900 dark:text-gray-900;
+  font-family: 'Replica', sans-serif;
+  @apply text-neutral-900 dark:text-neutral-100;
   overflow-wrap: break-word;
 }
 .notion,
 .notion-text,
 .notion-quote,
 .notion-h-title {
-  @apply leading-7;
+  @apply leading-10;
+  line-height: 140%;
   @apply p-0;
   @apply my-1;
   width: 100%;
   margin: 0;
   padding: 0px;
+  @apply font-bold;
 }
+
+.notion-h{
+  margin-bottom: 1em;
+}
+
 
 .notion-toggle {
   @apply w-full;
 }
 
+
+
 .notion-list li {
   @apply py-0;
+  @apply text-xl; 
+  @apply font-bold;
 }
 .notion-page-link {
   color: inherit;
@@ -73,7 +86,7 @@ pre[class*="language-"] {
   @apply px-0;
 }
 .notion-page {
-  @apply w-auto;
+  @apply w-full;
   @apply px-0;
 }
 .notion-quote {
@@ -101,4 +114,11 @@ pre[class*="language-"] {
 .notion-hr {
   border-top: 1px solid rgba(55, 53, 47, 0.16);
 }
+.notion-h-title{
+  font-size: xxx-large;
+  @apply leading-10;
+}
 
+.notion-text{
+  font-size: x-large;
+}

@@ -8,12 +8,15 @@ module.exports = {
     extend: {
       colors: {
         day: {
-          DEFAULT: '#f1f3f5'
+          DEFAULT: '#ffffff'
         },
         night: {
-          DEFAULT: '#18181B'
+          DEFAULT: '#000000'
         }
       },
+      borderRadius:{
+        '4xl': '2em'
+      }
     }
   },
   variants: {

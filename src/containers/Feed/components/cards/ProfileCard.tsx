@@ -8,20 +8,26 @@ type Props = {
 
 const ProfileCard: React.FC<Props> = ({ className }) => {
   return (
-    <div className={className}>
-      <div className="p-1 mb-3 dark:text-white">💻 Profile</div>
-      <div className="w-full md:p-4 lg:p-4 rounded-2xl bg-white dark:bg-zinc-700 mb-9">
-        <div className="relative w-full after:content-[''] after:block after:pb-[100%]">
-          <Image src={CONFIG.profile.image} layout="fill" alt="" />
-        </div>
-        <div className="bg-white p-2 flex flex-col items-center dark:bg-zinc-700 dark:text-white">
-          <div className=" text-xl italic font-bold">{CONFIG.profile.name}</div>
-          <div className="text-sm mb-4 text-gray-500 dark:text-gray-400">
-            {CONFIG.profile.role}
-          </div>
-          <div className="text-sm mb-2">{CONFIG.profile.bio}</div>
+    <div className="hidden block p-0">
+      <div className="dark:text-white"></div>
+      <div className="block overflow-hidden w-fit  rounded-xl bg-neutral-100 md:p-4 lg:p-0 rounded-2xl  dark: ">
+        <div className="relative   after:content-[''] ">
+        <Image
+            src={CONFIG.profile.image}
+            width={90}
+            height={90}
+            alt="profile_image"
+            className="relative"
+          />
         </div>
       </div>
+        <div className="p-0 flex flex-col pl-0 items-left rounded-2xl dark: dark:text-white">
+          <div className="text-4xl w-full pt-4 mb-2 font-bold">{CONFIG.profile.name}</div>
+          <div className="text-M mb-0  text-neutral-900 dark:text-neutral-400">
+            {CONFIG.profile.role}
+          </div>
+          <div className="text-xl mb-2">{CONFIG.profile.bio}</div>
+        </div>
     </div>
   )
 }

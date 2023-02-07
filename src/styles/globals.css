@@ -3,15 +3,20 @@
 @tailwind utilities;
 
 html {
-  font-family: Pretendard, Roboto, sans-serif;
+  font-family: 'Replica', sans-serif;
   --scrollbarBG: #ffffff00;
   --thumbBG: #b8b8b8;
+  --gray-light: #E5E5E5;
+  --gray-medium: #dbdbdb;
+  --yellow: #EBC814;
+  --width: 100vw;
 }
 body::-webkit-scrollbar {
   width: 5px;
 }
 body {
   scrollbar-width: thin;
+  background-color: var(--gray-light);
   scrollbar-color: var(--thumbBG) var(--scrollbarBG);
 }
 body::-webkit-scrollbar-track {
@@ -91,9 +96,16 @@ nav {
   overflow-x: scroll;
 }
 
+
+
+
+
+
+
+
 @media (max-width: 768px) {
   .sticky-nav-full {
-    @apply max-w-full border-b border-opacity-50 border-gray-200 dark:border-gray-600 dark:border-opacity-50;
+    @apply w-full border-b border-opacity-50 border-gray-200 dark:border-gray-600 dark:border-opacity-50;
   }
   .header-name {
     display: block;

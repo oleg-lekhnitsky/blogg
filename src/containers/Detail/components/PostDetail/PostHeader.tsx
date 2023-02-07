@@ -12,7 +12,7 @@ type Props = {
 const PostHeader: React.FC<Props> = ({ data }) => {
   return (
     <>
-      <h1 className="font-bold text-3xl text-black dark:text-white">
+      <h1 className="text-6xl font-bold md:text-xl md:text-6xl text-black dark:text-white">
         {data.title}
       </h1>
       {data.type[0] !== "Paper" && (
@@ -22,18 +22,18 @@ const PostHeader: React.FC<Props> = ({ data }) => {
               <>
                 <div className="flex items-center gap-2">
                   <Image
-                    className="rounded-full"
+                    className="rounded-xl"
                     src={data.author[0].profile_photo || CONFIG.profile.image}
                     alt="profile_photo"
-                    width={24}
-                    height={24}
+                    width={50}
+                    height={50}
                   />
                   <div className="">{data.author[0].name}</div>
                 </div>
                 <div className="self-stretch w-px my-1 bg-gray-300"></div>
               </>
             )}
-            <div className=" mr-2 md:ml-0">
+            <div className="text-xl mr-2 md:ml-0">
               {formatDate(
                 data?.date?.start_date || data.createdTime,
                 CONFIG.lang

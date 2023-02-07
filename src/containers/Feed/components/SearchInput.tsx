@@ -4,10 +4,10 @@ interface Props extends InputHTMLAttributes<HTMLInputElement> {}
 
 const SearchInput: React.FC<Props> = ({ ...props }) => {
   return (
-    <div className="mb-4 md:mb-8">
-      <div className="p-1 mb-3 dark:text-white">🔎 Search</div>
+    <div className="mb-4 md:mb-8 mt-5">
+      <div className="p-0 mb-3 dark:text-white"></div>
       <input
-        className="rounded-2xl px-5 py-2 w-full bg-gray-200 dark:bg-zinc-700 dark:text-white focus:bg-white focus:shadow-md outline-none transition"
+        className="font-bold border-2 border-neutral-600 rounded-2xl px-4 py-2 w-full placeholder-neutral-400 dark: bg-transparent dark:text-gray-100 focus:border-neutral-900 focus:d outline-none transition dark:md:hover:border-neutral-100"
         type="text"
         placeholder="Search Keyword..."
         {...props}
