@@ -7,11 +7,7 @@ class MyDocument extends Document {
     return (
       <Html lang={CONFIG.lang}>
         <Head>
-          <link
-            rel="preload"
-            as="font"
-            href="https://github.com/oleg-lekhnitsky/pra.agency/blob/master/static/fonts/Replica%20Regular.woff"
-          />
+
           <link rel="icon" href="/favicon.png" />
           <link
             rel="apple-touch-icon"
