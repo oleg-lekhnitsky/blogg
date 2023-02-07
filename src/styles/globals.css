@@ -20,6 +20,12 @@ html {
   --yellow: #EBC814;
   --width: 100vw;
 }
+
+h1, h1, h3, p{
+  font-family: Replica, sans-serif;
+  font-weight: 400;
+} 
+
 body::-webkit-scrollbar {
   width: 5px;
 }
