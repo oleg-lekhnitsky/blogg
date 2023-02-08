@@ -2,10 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-
+@font-face {
+  font-family: 'Replica';
+  src: url('/fonts/Replica-Regular.eot');
+  font-weight: normal;
+  font-style: normal;
+}
 
 html {
-  font-family: Replica, sans-serif !important;
+  font-family: 'Replica', sans-serif !important;
   
   font-display: swap;
   --scrollbarBG: #ffffff00;
