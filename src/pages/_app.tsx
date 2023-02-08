@@ -1,9 +1,11 @@
 
+import '@styles/stylesheet.css'
+import '@styles/globals.css'
 import 'react-notion-x/src/styles.css'
 
 
-import '@styles/stylesheet.css'
-import '@styles/globals.css'
+
+
 
 import '@styles/notion.css'
 import useThemeEffect from '@hooks/useThemeEffect'
