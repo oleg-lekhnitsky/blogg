@@ -3,6 +3,7 @@ body{
   width: 100%;
 }
 .notion {
+  font-family: 'Replica', sans-serif;
   @apply text-neutral-900 dark:text-neutral-100;
   overflow-wrap: break-word;
 }
