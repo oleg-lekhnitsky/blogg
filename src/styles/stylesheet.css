@@ -16,7 +16,7 @@
 
 @font-face {
     font-family: 'Replica';
-    src: url('fonts/Replica-Italic.eot');
+    src: url('/public/fonts/Replica-Italic.eot');
     font-weight: normal;
     font-style: italic;
 }
