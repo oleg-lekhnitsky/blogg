@@ -1,13 +1,3 @@
-// In your server.js or next.config.js file
-const httpHeaders = require('http-headers');
-
-module.exports = (req, res) => {
-  httpHeaders(res, {
-    'Access-Control-Allow-Origin': '*',
-  });
-
-  // The rest of your code here...
-};
 
 module.exports = {
   reactStrictMode: false,
