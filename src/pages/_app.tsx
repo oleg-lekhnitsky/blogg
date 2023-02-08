@@ -1,8 +1,10 @@
 
 import 'react-notion-x/src/styles.css'
 
-import '@styles/globals.css'
+
 import '@styles/notion.css'
+import '@styles/globals.css'
+import '@styles/stylesheet.css'
 import useThemeEffect from '@hooks/useThemeEffect'
 import useGtagEffect from '@hooks/useGtagEffect'
 import Scripts from '@components/Scripts'
