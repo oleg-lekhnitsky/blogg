@@ -10,7 +10,7 @@ class MyDocument extends Document {
           <link
             rel="preload"
             as="font"
-            href="https://github.com/oleg-lekhnitsky/pra.agency/blob/master/static/fonts/Replica%20Regular.woff"
+            href="https://blogg-omega.vercel.app/src/styles/stylesheet.css"
           />
           <link rel="icon" href="/favicon.png" />
           <link
