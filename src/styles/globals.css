@@ -3,16 +3,10 @@
 @tailwind utilities;
 
 
-@font-face {
-  font-family: 'Replics';
-  src: url('/public/fonts/Replica.otf');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-  }
 
 html {
-  font-family: 'Replica', sans-serif !important;
+  font-family: Replica, sans-serif !important;
+  
   font-display: swap;
   --scrollbarBG: #ffffff00;
   --thumbBG: #b8b8b8;
