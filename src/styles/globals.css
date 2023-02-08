@@ -4,8 +4,12 @@
 
 @font-face {
   font-family: 'Replica';
+  src: url('/public/fonts/Replica-Regular.ttf');
+  src: url('/public/fonts/Replica-Regular.woff');
+  src: url('/public/fonts/Replica-Regular.woff2');
   src: url('/public/fonts/Replica-Regular.eot');
-  font-weight: normal;
+  font-display: swap;
+  font-weight: 300;
   font-style: normal;
 }
 
