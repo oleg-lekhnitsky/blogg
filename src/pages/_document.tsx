@@ -8,8 +8,7 @@ class MyDocument extends Document {
       <Html lang={CONFIG.lang}>
         <Head>
           <link
-            rel="preload"
-            as="font"
+            rel="stylesheet"
             href="https://github.com/oleg-lekhnitsky/blogg/blob/main/src/styles/stylesheet.css"
           />
           <link rel="icon" href="/favicon.png" />
