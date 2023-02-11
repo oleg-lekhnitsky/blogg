@@ -1,57 +1,148 @@
 /* NOTION CSS OVERRIDE */
+*{
+  box-sizing: border-box;
+}
+
 body{
   width: 100%;
+  font-size: 18px;
+  font-family: 'Replica' !important;
+  font-display: swap;
+  --scrollbarBG: #ffffff00;
+  --thumbBG: #b8b8b8;
+  --gray-light: #E5E5E5;
+  --gray-medium: #dbdbdb;
+  --black: #131313;
+  --yellow: #EBC814;
+  --blue: #0088d1;
+  --notion-orange_background: #EBC814;
+  --width: 100vw;
+  --heading-line-height: 87%;
+  --body-line-height: 120%;
+  --ease-out: all ease-out 400ms;
+  --ease-in: all ease-in 50ms;
+  font-size: 18px;
 }
 .notion {
   font-family: 'Replica', sans-serif;
-  @apply text-neutral-900 dark:text-neutral-100;
   overflow-wrap: break-word;
+  background-color: transparent;
 }
 .notion,
 .notion-text,
 .notion-quote,
 .notion-h-title {
-  @apply leading-10;
-  line-height: 140%;
-  @apply p-0;
-  @apply my-1;
+  line-height: 120%;
   width: 100%;
   margin: 0px;
   padding: 0px;
-  @apply font-bold;
+  hyphens: auto;
+  word-break: normal;
+  color: var(--black);
 }
 
+.notion-asset-wrapper{
+  background-color: transparent;
+  padding: 0;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+article{
+  width: 66%;
+  color: var(--black);
+}
+
+main.post-wrapper{
+  width: 100%;
+  padding: 0 1rem;
+}
+
+
+.post-header{
+  margin-top: 2.5rem;
+  position: relative;
+  height: auto;
+  overflow: hidden;
+  aspect-ratio: 16/9;
+  border-radius: 20px;
+}
+
+.post-heading{
+  font-size: 5rem;
+  line-height: var(--heading-line-height);
+  letter-spacing: -.1rem;
+  margin: 1rem 0;
+  text-indent: 8rem;
+  margin-bottom: 1.5rem;
+}
+
+.post-heading::before {
+  content: '';
+}
+
+.post-details-wrapper{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  font-style: italic;
+  margin-bottom: -3rem;
+}
+
+.author-image-wrapper{
+  display: none;
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+  overflow: hidden;
+  object-fit: contain;
+  border-radius: 999px;
+}
+
+img.author-image{
+  position: absolute;
+  object-fit: cover;
+  width: 100%;
+  
+}
+
+.notion-text {
+  font-size: 1.8rem;
+}
+
+
 .notion-h{
+  font-weight: 400;
   margin-bottom: 1em;
 }
 
 
 .notion-toggle {
-  @apply w-full;
+
 }
 
 
 
 .notion-list li {
-  @apply py-0;
-  @apply text-xl; 
-  @apply font-bold;
+  font-size: 1.5rem;
+  line-height: var(--body-line-height);
 }
 .notion-page-link {
   color: inherit;
 }
 
 svg.notion-page-icon {
-  @apply hidden;
+  display: none;
 }
 
 svg + .notion-page-title-text {
-  @apply border-b-0;
+  display: none
 }
 
 .notion-bookmark {
   @apply border;
-  @apply border-gray-100;
   color: inherit;
 }
 
@@ -79,15 +170,11 @@ pre[class*="language-"] {
   z-index: -10;
 }
 .notion-asset-caption {
-  @apply text-center;
-  @apply text-gray-900 dark:text-gray-900;
 }
 .notion-full-width {
-  @apply px-0;
 }
 .notion-page {
-  @apply w-full;
-  @apply px-0;
+
 }
 .notion-quote {
   padding: 0.2em 0.9em;
@@ -105,20 +192,70 @@ pre[class*="language-"] {
   @apply px-0 !important;
 }
 .notion-collection-view-type {
-  @apply hidden;
+  display: none;
 }
 .notion-collection-row {
-  @apply hidden;
+  display: none;
+}
+
+.notion-callout{
+  background-color: transparent;
+  border: solid 2px var(--black);
+  font-size: 1.5rem;
+  line-height: var(--body-line-height);
+  gap: 1rem;
+  padding: 1rem;
+  margin: 2rem 0;
+  border-radius: 20px;
+  hyphens: auto;
+  word-break: normal;
 }
 
 .notion-hr {
-  border-top: 1px solid rgba(55, 53, 47, 0.16);
+  border-top: 1px solid var(--black);
 }
 .notion-h-title{
-  font-size: xxx-large;
-  @apply leading-10;
+  background-color: transparent;
+  font-size: 3rem;
+  font-weight: 400;
+  color: var(--black);
 }
 
-.notion-text{
-  font-size: x-large;
+.notion-link{
+  color: var(--blue);
+  border-bottom: 1px solid #0088d1;
+}
+
+.notion-hash-link{
+  display: none;
+}
+
+.notion-list{
+  color: var(--black);
+}
+
+.notion-list li:hover{
+  background-color: transparent;
+}
+
+.dark .notion-text, .dark .notion-list, .dark .notion-h-title, .dark .post-heading, .dark .post-date, .dark .post_tag, .dark .tags_list{
+  color: var(--gray-light);
+}
+
+.dark .post_tag{
+  border-color: var(--gray-light);
+}
+
+.dark .post_tag:hover{
+  border-color: var(--black);
+  color: var(--black);
+}
+
+@media (max-width: 1350px) {
+  article{
+    width: 100%;
+   }
+   main.post-wrapper{
+    padding: 0;
+  }
 }

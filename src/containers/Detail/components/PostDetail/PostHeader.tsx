@@ -12,35 +12,37 @@ type Props = {
 const PostHeader: React.FC<Props> = ({ data }) => {
   return (
     <>
-      <h1 className="text-6xl font-bold md:text-xl md:text-6xl text-black dark:text-white">
-        {data.title}
-      </h1>
+
       {data.type[0] !== "Paper" && (
-        <nav className="mt-6 text-gray-500 dark:text-gray-400">
-          <div className="flex items-center gap-3 mb-3">
+        <nav className="mt-6 ">
+          <div className="post-details-wrapper">
             {data.author && data.author[0] && data.author[0].name && (
               <>
-                <div className="flex items-center gap-2">
+                <div className="author-image-wrapper">
                   <Image
-                    className="rounded-xl"
+                    className="author-image"
                     src={data.author[0].profile_photo || CONFIG.profile.image}
                     alt="profile_photo"
                     width={50}
                     height={50}
                   />
-                  <div className="">{data.author[0].name}</div>
+                  
                 </div>
-                <div className="self-stretch w-px my-1 bg-gray-300"></div>
+                
+              
               </>
             )}
-            <div className="text-xl mr-2 md:ml-0">
+            <div className="post-date">
               {formatDate(
                 data?.date?.start_date || data.createdTime,
                 CONFIG.lang
               )}
             </div>
           </div>
-          <div className="flex items-center mb-4">
+          <h1 className="post-heading">
+            {data.title}
+          </h1>
+          <div className="tags_list">
             {data.tags && (
               <div className="flex flex-nowrap max-w-full overflow-x-auto article-tags gap-2">
                 {data.tags.map((tag: string) => (
@@ -50,7 +52,7 @@ const PostHeader: React.FC<Props> = ({ data }) => {
             )}
           </div>
           {data.thumbnail && (
-            <div className="relative w-full pb-[66%] lg:pb-[50%] bg-gray-200 dark:bg-zinc-700 mb-7 rounded-3xl overflow-hidden">
+            <div className="post-header">
               <Image
                 src={data.thumbnail}
                 className="object-cover"

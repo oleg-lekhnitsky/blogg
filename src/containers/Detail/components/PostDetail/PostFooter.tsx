@@ -6,11 +6,11 @@ type Props = {}
 const Footer: React.FC<Props> = () => {
   const router = useRouter()
   return (
-    <div className="flex justify-between font-medium text-gray-500 dark:text-gray-400">
+    <div className="flex justify-between ">
       <a>
         <button
           onClick={() => router.push('/')}
-          className="mt-2 cursor-pointer hover:text-black dark:hover:text-gray-100"
+          className=""
         >
           ← Back
         </button>
@@ -18,7 +18,7 @@ const Footer: React.FC<Props> = () => {
       <a>
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="mt-2 cursor-pointer hover:text-black dark:hover:text-gray-100"
+          className=""
         >
           ↑ Top
         </button>

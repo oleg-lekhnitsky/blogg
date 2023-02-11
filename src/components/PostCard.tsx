@@ -17,31 +17,25 @@ const PostCard: React.FC<Props> = ({ post }) => {
 
       <article
         key={post.id}
-        className="overflow-hidden flex flex-initial flex-wrap mb-6 md:mb-8 rounded-2xl bg-neutral-100 dark:bg-neutral-900 hover:shadow-2xl transition-shadow "
+        className="post_card"
       >
         {post.thumbnail && (
-          <div className="relative w-full md:w-1/2 overflow-hidden rounded-lg pb-[66%] lg:pb-[33%] bg-neutral-50 dark:bg-neutral-900 ">
+          <div className="post_card_cover_wrapper">
             <Image
               src={post.thumbnail}
-              className="object-cover"
+              className="post_cover"
               layout="fill"
               alt={post.title}
             />
           </div>
         )}
-        <div className="relative w-full md:w-1/2 p-8">
-        <div className="flex gap-2 mb-8 mt-2">
-            {post.tags &&
-              post.tags.map((tag: string, idx: number) => (
-                <Tag key={idx}>{tag}</Tag>
-              ))}
-          </div>
+        <div className="post_text_wrapper">
           <header className="flex flex-col justify-between md:flex-row md:items-baseline">
-            <h2 className="text-3xl sm:text-3xl md:text-5xl xl:text-6xl   font-bold mb-2 cursor-pointer text-black dark:text-neutral-100">
+            <h2 className="post_heading">
               {post.title}
             </h2>
           </header>
-          <div className="flex items-center gap-2 mb-4">
+          <div className="post-card-date">
             {/* {post.author && post.author[0] && (
               <>
                 <div className="flex items-center gap-1">
@@ -60,20 +54,26 @@ const PostCard: React.FC<Props> = ({ post }) => {
                 <div className="self-stretch w-px my-1 bg-gray-300"></div>
               </>
             )} */}
-            <div className="text-lg text-gray-500 dark:text-gray-400 md:ml-0">
+            <div className="post-card-date">
               {formatDate(
                 post?.date?.start_date || post.createdTime,
                 CONFIG.lang
               )}
             </div>
           </div>
-          <main className="mb-4">
-            <p className="font-bold text-2xl md:block leading-8 text-neutral-900 dark:text-neutral-100">
+          <main className="card_summary">
+            <p className="card_summary">
               {post.summary}
             </p>
           </main>
 
         </div>
+        <div className="post_tags_wrapper">
+            {post.tags &&
+              post.tags.map((tag: string, idx: number) => (
+                <Tag key={idx}>{tag}</Tag>
+              ))}
+          </div>
       </article>
 
     </Link>)
