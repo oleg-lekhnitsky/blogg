@@ -369,6 +369,7 @@ nav {
 .post_card_cover_wrapper{
   position: relative;
   min-height: 6rem;
+  overflow: hidden;
   width: 100%;
   aspect-ratio: 16/9;
   margin-bottom: 1rem;
