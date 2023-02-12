@@ -450,6 +450,9 @@ p.card_summary{
 
 
 @media (max-width: 768px) {
+  .contact-links-wrapper{
+    display: block;
+  }
 
   h2.post_heading{
     font-size: 1.5rem;
