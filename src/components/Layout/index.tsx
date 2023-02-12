@@ -20,7 +20,7 @@ const Layout: React.FC<Props> = ({
         {metaConfig.type !== "Paper" && <Header fullWidth={fullWidth} />}
         <main
           className={`post-wrapper ${
-            fullWidth && "px-4 md:px-24"
+            fullWidth && "px-4"
           } ${metaConfig.type === "Paper" && "py-10"} `}
         >
           {children}

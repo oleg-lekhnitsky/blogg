@@ -22,9 +22,10 @@ const Header: React.FC<Props> = ({ fullWidth }) => {
     > 
       <Logo />
       
-      <div className={`pr-0 flex gap-4 items-bottom md:pr-4`}>
-        <ThemeToggle />
+      <div className={`nav-links`}>
         <NavBar />
+        <ThemeToggle />
+        
       </div>
     </div>
   )

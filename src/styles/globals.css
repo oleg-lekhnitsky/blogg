@@ -61,6 +61,38 @@ h1, h2, h3, p{
   hyphens: auto;
 } 
 
+.nav-links{
+  display: flex;
+  width: auto;
+  justify-content: space-between;
+  padding-right: 1rem;
+}
+
+.contact-links-wrapper{
+  color: var(--black);
+  font-size: 1rem;
+}
+
+.contact-link{
+  line-height: var(--heading-line-height);
+}
+
+.dark-light{
+  margin-top: .8rem;
+  cursor: pointer;
+  width: 3rem;
+  height: 1rem;
+  background: linear-gradient(to left, #000000, #ffffff);
+  transition: var(--ease-out);
+  transition-delay: .5s;
+  border-radius: 5px;
+}
+
+.dark-light:hover{
+  transform: rotate(-180deg);
+  transition: all 0ms ;
+}
+
 body::-webkit-scrollbar {
   width: 5px;
 }
@@ -81,10 +113,11 @@ body::-webkit-scrollbar-thumb {
 }
 
 .logo-name-wrapper{
+  width: 100%;
   color: var(--black);
   display: flex;
   flex-wrap: wrap;
-  padding: 0 1rem;
+  padding-left: 1rem;
   gap: 1.25rem
 }
 
@@ -95,14 +128,16 @@ body::-webkit-scrollbar-thumb {
 .logo_image_wrapper{
   position: relative;
   overflow: hidden;
-  height: 8rem;
-  width: 6rem;
+  height: auto;
+  width: calc((var(--width))/19.5);
+  aspect-ratio: 3/4;
   margin-top: .5rem;
   border-radius: var(--border-radius-round);
-  object-fit: contain;
+  object-fit: cover;
 }
 
 img.logo_image{
+  height: 100%;
   width: 100%;
   position: absolute;
   object-fit: cover;
@@ -154,6 +189,7 @@ nav {
 .logo-name{
   display: block;
   font-size: 10rem;
+  font-size: calc((var(--width))/11.5);
   letter-spacing: -.2rem;
   line-height: var(--heading-line-height);
 }
@@ -197,13 +233,38 @@ nav {
   color: var(--gray-light);
 }
 
-.profile_links_wrapper{
-  transform: rotate(-3deg);
-  
+.contact-links-wrapper{
+  margin-top: .25rem;
+  display: flex;
+  gap: 4rem;
 }
 
+.contact-links-wrapper:hover{
+  background-color: transparent;
+}
+
+
+
 .profile_link{
-  font-size: 1.5rem;
+  display: inline-flex;
+  gap: 1rem;
+  border-radius: 10px;
+  padding: .25rem;
+  font-size: 1rem;
+  margin-right: 1rem;
+  margin-bottom: .75rem;
+  box-shadow: -5px 5px 0px var(--black);
+  transition: var(--ease-out);
+}
+
+.dark .profile_link{
+  color: var(--gray-light);
+  box-shadow: -5px 5px 0px var(--gray-light);
+}
+
+.profile_link:hover{
+  box-shadow: -5px 5px 0px var(--yellow);
+  transition: var(--ease-in);
 }
 
 .profile_heading{
@@ -279,6 +340,11 @@ nav {
   font-size: 1.25rem;
   padding: 1rem;
   transition: var(--ease-out);
+}
+
+.dark .tags-list li:hover{
+  color: var(--black);
+  border-color: var(--black);
 }
 
 .posts-main{

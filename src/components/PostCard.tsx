@@ -24,7 +24,9 @@ const PostCard: React.FC<Props> = ({ post }) => {
             <Image
               src={post.thumbnail}
               className="post_cover"
-              layout="fill"
+              layout="responsive"
+              width={1920}
+              height={1080}
               alt={post.title}
             />
           </div>

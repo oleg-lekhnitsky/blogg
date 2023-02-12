@@ -25,6 +25,7 @@ const PostHeader: React.FC<Props> = ({ data }) => {
                     alt="profile_photo"
                     width={50}
                     height={50}
+                    layout="responsive"
                   />
                   
                 </div>
