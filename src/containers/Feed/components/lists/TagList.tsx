@@ -29,7 +29,7 @@ const TagList: React.FC<Props> = ({ className, data }) => {
             key={key}
             className={`tags_list ${
               key === currentTag &&
-              'text-black underline dark: hover:bg-white dark:hover:bg-zinc-700'
+              'tags-list-active'
             }`}
             onClick={() => handleClickTag(key)}
           >

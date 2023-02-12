@@ -17,7 +17,7 @@ html {
   --black: #131313;
   --yellow: #EBC814;
   --width: 100vw;
-  --heading-line-height: 87%;
+  --heading-line-height: 100%;
   --body-line-height: 120%;
   --ease-out: all ease-out 400ms;
   --ease-in: all ease-in 50ms;
@@ -37,6 +37,10 @@ html {
 body{
   font-family: 'Replica';
   color: var(--black);
+  background-color: #ffffff;
+}
+.dark body{
+  background-color: #000000;
 }
 
 @font-face {
@@ -60,7 +64,10 @@ h1, h2, h3, p{
   word-break: auto;
   hyphens: auto;
 } 
-
+h2.post_heading{
+  line-height: 100%;
+  margin-bottom: 0;
+}
 .nav-links{
   display: flex;
   width: auto;
@@ -345,6 +352,28 @@ nav {
 .dark .tags-list li:hover{
   color: var(--black);
   border-color: var(--black);
+}
+
+.dark li.tags-list-active:hover{
+  color: var(--gray-light);
+  border-color: var(--gray-light);
+}
+
+.tags-list-active{
+  text-decoration: underline;
+}
+
+
+.tags-list-active:hover{
+  text-decoration: underline;
+  background-color: inherit;
+  color: var(--black);
+}
+
+.dark .tags-list-active:hover{
+  text-decoration: underline;
+  background-color: inherit;
+  color: var(--gray-light);
 }
 
 .posts-main{
