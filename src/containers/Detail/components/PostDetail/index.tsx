@@ -8,8 +8,9 @@ import {
 import { TPost } from "@/src/types"
 import React from "react"
 import PostHeader from "./PostHeader"
-import Footer from "./PostFooter"
+import PostFooter from "./PostFooter"
 import CommentBox from "./CommentBox"
+import RelatedPosts from "./RelatedPosts"
 
 const mapPageUrl = (id: string) => {
   return "https://www.notion.so/" + id.replace(/-/g, "");
@@ -18,9 +19,10 @@ const mapPageUrl = (id: string) => {
 type Props = {
   blockMap: any
   data: TPost
+  nextPostSlug?: string
 }
 
-const PostDetail: React.FC<Props> = ({ blockMap, data }) => {
+const PostDetail: React.FC<Props> = ({ blockMap, data, nextPostSlug }) => {
   return (
     <div
       className={`post-wrapper`}
@@ -42,9 +44,12 @@ const PostDetail: React.FC<Props> = ({ blockMap, data }) => {
           </div>
         )}
         {data.type[0] === "Post" && (
+          
           <>
-            <Footer />
-
+            <PostFooter nextPostSlug={nextPostSlug} />
+            
+            <RelatedPosts></RelatedPosts>
+            
           </>
         )}
       </article>

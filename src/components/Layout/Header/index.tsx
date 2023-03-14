@@ -14,7 +14,7 @@ const Header: React.FC<Props> = ({ fullWidth }) => {
   return (
     <div
     
-      className={`nav m-0 w-full flex flex-row justify-between items-bottom md:mb-8 pt-4 bg-opacity-100 max-w-6x2 ${
+      className={`nav-wrapper ${
         fullWidth && "px-2 md:px-24"
       }`}
       id="sticky-nav"

@@ -24,6 +24,7 @@ const Layout: React.FC<Props> = ({
           } ${metaConfig.type === "Paper" && "py-10"} `}
         >
           {children}
+          
         </main>
       </div>
     </div>

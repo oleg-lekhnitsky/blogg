@@ -2,23 +2,21 @@ import { TPost } from "@/src/types"
 import CONFIG from "site.config"
 import dynamic from "next/dynamic"
 
-const UtterancesComponent = dynamic(
-  () => {
-    return import("@components/Utterances")
-  },
-  { ssr: false }
-)
+import RelatedPosts from './RelatedPosts'
 
 type Props = {
-  data: TPost
+  post: TPost
+  posts: TPosts
 }
 
-const CommentBox: React.FC<Props> = ({ data }) => {
+const Post: React.FC<Props> = ({ post, posts }) => {
   return (
-    <div>
-      {CONFIG.utterances.enable && <UtterancesComponent issueTerm={data.id} />}
+    <div className="post">
+      <h1>{post.title}</h1>
+      <div className="content">{post.content}</div>
+      <RelatedPosts posts={posts} currentPostId={post.id} />
     </div>
   )
 }
 
-export default CommentBox
+export default Post

@@ -7,6 +7,8 @@ import { TPosts, TTags } from '@custeomTypes/index'
 import SearchInput from './components/SearchInput'
 import PostHeader from './components/Header'
 import Footer from './components/Footer'
+import Copytext from './components/Copytext'
+
 
 type Props = {
   tags: TTags
@@ -27,6 +29,7 @@ const Feed: React.FC<Props> = ({ tags, posts }) => {
         <Lists.PostList q={q} posts={posts} tags={tags} />
         <Footer className="hidden block flex justify-center pb-8" />
         <Footer className="footer_main" />
+        
       </div>
       <div className="hidden lg:block lg:col-span-2">
         <Cards.ProfileCard />

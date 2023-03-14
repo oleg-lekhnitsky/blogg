@@ -14,6 +14,7 @@ html {
   --thumbBG: #b8b8b8;
   --gray-light: #E5E5E5;
   --gray-medium: #dbdbdb;
+  --white: #ffffff;
   --black: #131313;
   --yellow: #EBC814;
   --width: 100vw;
@@ -68,36 +69,83 @@ h2.post_heading{
   line-height: 100%;
   margin-bottom: 0;
 }
+.nav-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 1rem;
+  margin-bottom: 2rem;
+}
 .nav-links{
   display: flex;
+  gap: 1.5rem;
   width: auto;
   justify-content: space-between;
-  padding-right: 1rem;
+  margin-top: .75rem;
 }
 
 .contact-links-wrapper{
   color: var(--black);
-  font-size: 1rem;
+  font-size: 1.5rem;
+  line-height: var(--heading-line-height);
 }
 
 .contact-link{
   line-height: var(--heading-line-height);
 }
 
-.dark-light{
-  margin-top: .8rem;
+.hoverme{
+  position: relative;
+  display: inline-block;
+  font-size: 1.5rem;
+  line-height: var(--heading-line-height);
   cursor: pointer;
-  width: 3rem;
-  height: 1rem;
-  background: linear-gradient(to left, #000000, #ffffff);
+  transition: var(--ease-out);
+}
+
+.hoverme:hover {
+  transition: var(--ease-out);
+}
+
+.hoverme:hover > .pop {
+  opacity: 1;
+  background-color: var(--blue);
+  transition: var(--ease-in);
+}
+
+.pop{
+  position: absolute;
+  display: flex;
+  gap: .25rem;
+  flex-direction: column;
+  padding: .5rem;
+  height: fit-content;
+  margin-top: .5rem;
+  margin-left: -1.25rem;
+  opacity: 0;
+  background-color: var(--white);
+  border-radius: 25px;
   transition: var(--ease-out);
   transition-delay: .5s;
-  border-radius: 5px;
+  
+  z-index: 999;
+}
+
+.dark-light{
+  margin-left: .5rem;
+  cursor: pointer;
+  width: 3rem;
+  height: 1.25rem;
+  transform: rotate(0deg);
+  background: linear-gradient(to bottom, #000000 100%, #ffffff);
+  transition: var(--ease-in);
+  border-radius: 10px;
 }
 
 .dark-light:hover{
-  transform: rotate(-180deg);
-  transition: all 0ms ;
+  background: linear-gradient(to bottom, #000000, #ffffff);
+  transition: var(--ease-out);
 }
 
 body::-webkit-scrollbar {
@@ -120,11 +168,10 @@ body::-webkit-scrollbar-thumb {
 }
 
 .logo-name-wrapper{
-  width: 100%;
   color: var(--black);
   display: flex;
   flex-wrap: wrap;
-  padding-left: 1rem;
+  
   gap: 1.25rem
 }
 
@@ -162,6 +209,10 @@ img.logo_image{
 
 .sticky-nav {
   position: sticky;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
   z-index: 10;
   top: -1px;
   backdrop-filter: blur(5px);
@@ -173,9 +224,7 @@ img.logo_image{
   position: unset;
 }
 
-.sticky-nav-full {
-  @apply border-b border-opacity-50 border-gray-200 dark:border-gray-600 dark:border-opacity-50;
-}
+
 
 .header-name {
   /* display: none; */
@@ -184,9 +233,7 @@ img.logo_image{
   overflow: hidden;
 }
 
-.sticky-nav-full .nav {
-  @apply text-gray-600 dark:text-gray-300;
-}
+
 
 nav {
   flex-wrap: wrap;
@@ -241,9 +288,9 @@ nav {
 }
 
 .contact-links-wrapper{
-  margin-top: .25rem;
+  
   display: flex;
-  gap: 4rem;
+  gap: 1.5rem;
 }
 
 .contact-links-wrapper:hover{
@@ -253,14 +300,18 @@ nav {
 
 
 .profile_link{
+  display: flex;
+  padding: 1rem;
+  align-content: center;
+  justify-content: flex-start;
+  background-color: var(--white);
+  color: var(--black);
   display: inline-flex;
+  width: 100%;
   gap: 1rem;
-  border-radius: 10px;
-  padding: .25rem;
-  font-size: 1rem;
-  margin-right: 1rem;
-  margin-bottom: .75rem;
-  box-shadow: -5px 5px 0px var(--black);
+  border-radius: 20px;
+  padding: 1rem;
+  font-size: 1.25rem;
   transition: var(--ease-out);
 }
 
@@ -270,7 +321,8 @@ nav {
 }
 
 .profile_link:hover{
-  box-shadow: -5px 5px 0px var(--yellow);
+  color: var(--black);
+  background-color: var(--yellow);
   transition: var(--ease-in);
 }
 
@@ -356,7 +408,7 @@ nav {
 
 .dark li.tags-list-active:hover{
   color: var(--gray-light);
-  border-color: var(--gray-light);
+  background-color: var(--gray-light);
 }
 
 .tags-list-active{
@@ -442,7 +494,7 @@ p.card_summary{
 }
 
 .dark p{
-  
+  color: var(--gray-light);
 }
 
 .post_tags_wrapper{
@@ -476,16 +528,79 @@ p.card_summary{
    .logo-name-wrapper{
     padding: 0;
    }
+   
 }
 
 
 @media (max-width: 768px) {
-  .contact-links-wrapper{
+
+
+  .logo-name-wrapper{
+    flex-direction: column;
+    gap: .5rem;
+    width: 100%;
+  }
+
+  .logo_image_wrapper{
+    width: 5rem;
+    height: 4rem;
+  }
+  img.logo_image{
+    object-position: top;
+  }
+
+  .dark-light{
+    display: none;
+  }
+  
+  .logo-name{
+    display: inline-block;
+    padding-top: .5rem;
+    font-size: 1.125rem;
+    letter-spacing: 0rem;
+    line-height: 100%;
+    padding-top: .5rem;
+    bottom: 0;
+  }
+  .nav-links{
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    width: 50%;
+    
+  }
+
+
+  .profile_heading{
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+  
+
+  ul.contact-links-wrapper, li.contact-links-wrapper{
     display: block;
+    width: 100%;
+  }
+
+  .profile_links_wrapper{
+    display: flex;
+    flex-direction: column;
+  }
+
+
+
+  .profile_link{
+    font-size: 1.75rem;
+    padding: .75rem;
   }
 
   h2.post_heading{
     font-size: 1.5rem;
+  }
+
+  input.search{
+    margin: 1.5rem 0;
   }
   .post-card-date{
     color: var(--black);
@@ -503,27 +618,18 @@ p.card_summary{
   .post_tag{
     font-size: 1rem;
   }
-  .logo-name{
-    display: block;
-    font-size: 2rem;
-    letter-spacing: 0rem;
-  }
+
   .dark .logo-name{
     color: var(--gray-light);
   }
 
-  .sticky-nav-full {
-    @apply w-full border-b border-opacity-50 border-gray-200 dark:border-gray-600 dark:border-opacity-50;
-  }
+
   .header-name {
     display: block;
     /* opacity: 0; */
     transition: all 0.5s cubic-bezier(0.4, 0, 0, 1);
   }
-  .sticky-nav-full .header-name {
-    opacity: 1;
-    @apply dark:text-gray-300 text-gray-600;
-  }
+
   .tags-list{
     overflow-x: scroll;
     scroll-behavior: smooth;
@@ -542,10 +648,7 @@ p.card_summary{
 }
 
 @supports not (backdrop-filter: none) {
-  .sticky-nav {
-    backdrop-filter: none;
-    @apply bg-day bg-opacity-90 dark:bg-night dark:bg-opacity-90;
-  }
+
 }
 .mobile-x-scroll {
   overflow-x: hidden;

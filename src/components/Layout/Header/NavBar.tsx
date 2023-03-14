@@ -1,19 +1,21 @@
 import Link from 'next/link'
 import CONFIG from '@/site.config';
+import Copytext from './Copytext'
+
 
 const NavBar: React.FC = () => {
   const links = [{ id: 1, name: 'About', to: '/about' }]
+  
 
   return (
     <div className="">
-      <ul className="contact-links-wrapper">
-        {links.map((link) => (
-          <li
-            key={link.id}
-            className="contact-links-wrapper"
-          >
-                  <div className="profile_links_wrapper">
-          {CONFIG.profile.instagram && (
+      <div className="contact-links-wrapper">
+
+      
+
+        <div className='hoverme'>Contact
+          <div className='pop'>
+            {CONFIG.profile.instagram && (
             <a
               href={`https://www.instagram.com/${CONFIG.profile.instagram}`}
               rel="noreferrer"
@@ -44,18 +46,46 @@ const NavBar: React.FC = () => {
               <div className="profile_link">Linkedin</div>
             </a>
           )}
+          <Copytext/>
+            
+          </div>
+          
         </div>
+        {links.map((link) => (
+          <div
+            key={link.id}
+            className="contact-links-wrapper"
+          >
             <Link href={link.to}>
               {link.name}
             </Link>
-          </li>
+            
+          </div>
+          
         ))}
-      
-
-        </ul>
+        
+        </div>
+        
     </div>
   );
 }
+
+
+
+function MyComponent() {
+  const handleCopy = () => {
+    const text = "This is the text to be copied.";
+    clipText(text);
+  };
+
+  return (
+    <div>
+      <button onClick={handleCopy}>Copy Text</button>
+    </div>
+  );
+}
+
+
 
 
 export default NavBar
