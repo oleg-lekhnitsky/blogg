@@ -12,7 +12,6 @@ type Props = {
 const PostList: React.FC<Props> = ({ q, posts, tags }) => {
   const router = useRouter()
   const [filteredPosts, setFilteredPosts] = useState(posts)
-  const [currentPostIndex, setCurrentPostIndex] = useState(0)
 
   const currentTag = `${router.query.tag || ``}` || 'All'
   const currentOrder = `${router.query.order || ``}` || 'desc'
@@ -42,19 +41,6 @@ const PostList: React.FC<Props> = ({ q, posts, tags }) => {
     })
   }, [q, currentTag, currentOrder])
 
-  const handlePostCardClick = (postId: string) => {
-    const postIndex = filteredPosts.findIndex(post => post.id === postId)
-    setCurrentPostIndex(postIndex)
-  }
-
-  const handleNextPostClick = () => {
-    const nextPostIndex = currentPostIndex + 1
-    if (nextPostIndex < filteredPosts.length) {
-      router.push(`${filteredPosts[nextPostIndex].slug}`)
-      setCurrentPostIndex(nextPostIndex)
-    }
-  }
-
   return (
     <>
       <div className="posts-main">
@@ -62,11 +48,8 @@ const PostList: React.FC<Props> = ({ q, posts, tags }) => {
           <p className="search-answer">Nothing. Try something different</p>
         )}
         {filteredPosts.slice(0, 20).map((post) => (
-          <PostCard key={post.id} post={post} onClick={() => handlePostCardClick(post.id)} />
+          <PostCard key={post.id} post={post} />
         ))}
-        {currentPostIndex < filteredPosts.length - 1 && (
-          <button onClick={handleNextPostClick}>Next Post</button>
-        )}
       </div>
     </>
   )
