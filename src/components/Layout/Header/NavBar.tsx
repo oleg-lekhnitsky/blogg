@@ -23,7 +23,7 @@ const NavBar: React.FC = () => {
               className="contact-link"
             >
 
-              <div className="profile_link">Instagram</div>
+              <div className="profile_link">Instagramm</div>
             </a>
           )}
           {CONFIG.profile.email && (
