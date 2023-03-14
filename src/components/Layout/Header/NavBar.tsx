@@ -72,18 +72,6 @@ const NavBar: React.FC = () => {
 
 
 
-function MyComponent() {
-  const handleCopy = () => {
-    const text = "This is the text to be copied.";
-    clipText(text);
-  };
-
-  return (
-    <div>
-      <button onClick={handleCopy}>Copy Text</button>
-    </div>
-  );
-}
 
 
 
